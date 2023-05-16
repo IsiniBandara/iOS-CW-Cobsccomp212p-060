@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginController: UIViewController {
-    
+    private var loadingView: LoadingView!
     private let headerView = AuthHeaderView(title: "Login", subTitle: "Sign in to your account")
     private let emailField = CustomTextField(fieldType: .email)
     private let passwordField = CustomTextField(fieldType: .password)
@@ -40,6 +40,12 @@ class LoginController: UIViewController {
         self.view.addSubview(newUserButton)
         self.view.addSubview(forgotPasswordButton)
         
+        // Create the loading view
+        loadingView = LoadingView(frame: view.bounds)
+        loadingView.isHidden = true
+        loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // Add the loading view as a subview
+        view.addSubview(loadingView)
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         emailField.translatesAutoresizingMaskIntoConstraints = false
@@ -82,10 +88,37 @@ class LoginController: UIViewController {
     }
     
     @objc private func didTapSignIn() {
-        let vc = HomeController()
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        self.present(nav, animated: false, completion: nil)
+        loadingView.isHidden = false
+        let loginRequest = LoginUserRequest(email: self.emailField.text ?? "", password: self.passwordField.text ?? "")
+        
+        if !Validator.isValidEmail(for: loginRequest.email){
+            AlertManager.showInvalidEmailAlert(on: self)
+            self.loadingView.isHidden = true
+            return
+        }
+        
+        if !Validator.isValidPassword(for: loginRequest.password){
+            AlertManager.showInvalidPasswordAlert(on: self)
+            self.loadingView.isHidden = true
+            return
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            AuthService.shared.signIn(with: loginRequest) { [weak self] error in
+                
+                guard let self = self else { return }
+                 
+                if let error = error {
+                    AlertManager.showSignInErrorAlert(on: self, with: error)
+                    self.loadingView.isHidden = true
+                    return
+                }
+                
+                if let sceneDeletgate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                    sceneDeletgate.checkAuthentication()
+                }
+            }
+        }
+
     }
     
     @objc private func didTapNewUser() {

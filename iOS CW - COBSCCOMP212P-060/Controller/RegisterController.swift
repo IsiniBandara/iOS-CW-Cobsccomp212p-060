@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterController: UIViewController {
-    
+    private var loadingView: LoadingView!
     private let headerView = AuthHeaderView(title: "Register", subTitle: "Create your account")
     private let usernameField = CustomTextField(fieldType: .username)
     private let emailField = CustomTextField(fieldType: .email )
@@ -58,6 +58,13 @@ class RegisterController: UIViewController {
         self.view.addSubview(termsTextView)
         self.view.addSubview(signInButton)
         
+        // Create the loading view
+        loadingView = LoadingView(frame: view.bounds)
+        loadingView.isHidden = true
+        loadingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // Add the loading view as a subview
+        view.addSubview(loadingView)
+        
         self.headerView.translatesAutoresizingMaskIntoConstraints = false
         self.usernameField.translatesAutoresizingMaskIntoConstraints = false
         self.emailField.translatesAutoresizingMaskIntoConstraints = false
@@ -105,11 +112,51 @@ class RegisterController: UIViewController {
     }
     
     @objc private func didTapSignUp() {
-//        print(usernameField.text! as String)
-        let vc = HomeController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: false, completion: nil)
+        loadingView.isHidden = false
+        let registerUserRequest = User(
+            username: self.usernameField.text ?? "",
+            email: self.emailField.text ?? "",
+            password: self.passwordField.text ?? "")
         
+        if !Validator.isValidEmail(for: registerUserRequest.email){
+            AlertManager.showInvalidEmailAlert(on: self)
+            loadingView.isHidden = true
+            return
+        }
+        
+        if !Validator.isValidUsername(for: registerUserRequest.username){
+            AlertManager.showInvalidUsernameAlert(on: self)
+            self.loadingView.isHidden = true
+            return
+        }
+        
+        if !Validator.isValidPassword(for: registerUserRequest.password){
+            AlertManager.showInvalidPasswordAlert(on: self)
+            self.loadingView.isHidden = true
+            return
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            AuthService.shared.registerUser(with: registerUserRequest) { [weak self] wasRegistered, error in
+                
+                guard let self = self else { return }
+                
+                if let error = error {
+                    AlertManager.showRegistrationErrorAlert(on: self, with: error)
+                    self.loadingView.isHidden = true
+                    return
+                }
+                
+                if wasRegistered{
+                    if let sceneDeletgate = self.view.window?.windowScene?.delegate as? SceneDelegate {
+                        sceneDeletgate.checkAuthentication()
+                    }
+                }else {
+                    AlertManager.showRegistrationErrorAlert(on: self)
+                    self.loadingView.isHidden = true
+                }
+            }
+        }
     }
     
     @objc private func didTapSignIn() {
