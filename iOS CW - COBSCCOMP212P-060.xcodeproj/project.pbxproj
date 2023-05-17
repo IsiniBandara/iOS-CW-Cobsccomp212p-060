@@ -24,6 +24,11 @@
 		410836262A13FC7E001D4DE2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 410836252A13FC7E001D4DE2 /* FirebaseAuth */; };
 		410836282A13FC7E001D4DE2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 410836272A13FC7E001D4DE2 /* FirebaseFirestore */; };
 		4108362A2A13FC7E001D4DE2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 410836292A13FC7E001D4DE2 /* FirebaseStorage */; };
+		4108362C2A152C07001D4DE2 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108362B2A152C07001D4DE2 /* CustomTextView.swift */; };
+		4108362E2A152CC1001D4DE2 /* GenderSelectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108362D2A152CC1001D4DE2 /* GenderSelectionButton.swift */; };
+		410836302A152D5E001D4DE2 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108362F2A152D5E001D4DE2 /* WorkoutView.swift */; };
+		410836322A152DBD001D4DE2 /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836312A152DBD001D4DE2 /* SelectGenderViewController.swift */; };
+		410836342A152EAC001D4DE2 /* SelectAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836332A152EAC001D4DE2 /* SelectAgeViewController.swift */; };
 		41A9195E2A06751B007495F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195D2A06751B007495F2 /* AppDelegate.swift */; };
 		41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195F2A06751B007495F2 /* SceneDelegate.swift */; };
 		41A919672A06751D007495F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A919662A06751D007495F2 /* Assets.xcassets */; };
@@ -45,6 +50,11 @@
 		4108361D2A13F6AA001D4DE2 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		4108361F2A13F6F6001D4DE2 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		410836222A13F74C001D4DE2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4108362B2A152C07001D4DE2 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		4108362D2A152CC1001D4DE2 /* GenderSelectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectionButton.swift; sourceTree = "<group>"; };
+		4108362F2A152D5E001D4DE2 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		410836312A152DBD001D4DE2 /* SelectGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderViewController.swift; sourceTree = "<group>"; };
+		410836332A152EAC001D4DE2 /* SelectAgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgeViewController.swift; sourceTree = "<group>"; };
 		41A9195A2A06751B007495F2 /* iOS CW - COBSCCOMP212P-060.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS CW - COBSCCOMP212P-060.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A9195D2A06751B007495F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41A9195F2A06751B007495F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +84,9 @@
 				410836082A114CD2001D4DE2 /* CustomButton.swift */,
 				4108360A2A114D19001D4DE2 /* CustomTextField.swift */,
 				410836152A13E8D0001D4DE2 /* LoadingView.swift */,
+				4108362B2A152C07001D4DE2 /* CustomTextView.swift */,
+				4108362D2A152CC1001D4DE2 /* GenderSelectionButton.swift */,
+				4108362F2A152D5E001D4DE2 /* WorkoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -86,6 +99,8 @@
 				4108360F2A114DE6001D4DE2 /* HomeController.swift */,
 				410836112A114E0C001D4DE2 /* LoginController.swift */,
 				410836132A114E54001D4DE2 /* RegisterController.swift */,
+				410836312A152DBD001D4DE2 /* SelectGenderViewController.swift */,
+				410836332A152EAC001D4DE2 /* SelectAgeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,15 +238,20 @@
 				410836142A114E54001D4DE2 /* RegisterController.swift in Sources */,
 				41A9195E2A06751B007495F2 /* AppDelegate.swift in Sources */,
 				410836042A114ABD001D4DE2 /* AuthHeaderView.swift in Sources */,
+				410836322A152DBD001D4DE2 /* SelectGenderViewController.swift in Sources */,
 				4108361C2A13F65A001D4DE2 /* AuthService.swift in Sources */,
+				410836302A152D5E001D4DE2 /* WorkoutView.swift in Sources */,
 				410836202A13F6F6001D4DE2 /* Validator.swift in Sources */,
 				410836162A13E8D0001D4DE2 /* LoadingView.swift in Sources */,
 				4108361E2A13F6AA001D4DE2 /* AlertManager.swift in Sources */,
 				4108360B2A114D19001D4DE2 /* CustomTextField.swift in Sources */,
 				410836232A13F74C001D4DE2 /* User.swift in Sources */,
 				41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */,
+				410836342A152EAC001D4DE2 /* SelectAgeViewController.swift in Sources */,
+				4108362C2A152C07001D4DE2 /* CustomTextView.swift in Sources */,
 				410836122A114E0C001D4DE2 /* LoginController.swift in Sources */,
 				410836102A114DE6001D4DE2 /* HomeController.swift in Sources */,
+				4108362E2A152CC1001D4DE2 /* GenderSelectionButton.swift in Sources */,
 				410836072A114C4E001D4DE2 /* OnBoardingViewController.swift in Sources */,
 				410836092A114CD3001D4DE2 /* CustomButton.swift in Sources */,
 				4108360E2A114DBB001D4DE2 /* ForgetPasswordController.swift in Sources */,

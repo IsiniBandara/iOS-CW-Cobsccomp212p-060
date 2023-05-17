@@ -33,7 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     public func checkAuthentication(){
         if Auth.auth().currentUser == nil {
-            self.goToController(with:  OnboardingViewController())
+            self.goToController(with:  SelectGenderViewController())
         }else{
             self.goToController(with: HomeController())
         }
