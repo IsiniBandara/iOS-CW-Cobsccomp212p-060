@@ -29,6 +29,11 @@
 		410836302A152D5E001D4DE2 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108362F2A152D5E001D4DE2 /* WorkoutView.swift */; };
 		410836322A152DBD001D4DE2 /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836312A152DBD001D4DE2 /* SelectGenderViewController.swift */; };
 		410836342A152EAC001D4DE2 /* SelectAgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836332A152EAC001D4DE2 /* SelectAgeViewController.swift */; };
+		410836372A15F11A001D4DE2 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836362A15F11A001D4DE2 /* Workout.swift */; };
+		410836392A15F17D001D4DE2 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836382A15F17D001D4DE2 /* ScheduleViewController.swift */; };
+		4108363C2A15F401001D4DE2 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108363B2A15F401001D4DE2 /* CustomTabBarController.swift */; };
+		4108363E2A15F475001D4DE2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108363D2A15F475001D4DE2 /* ProfileViewController.swift */; };
+		410836402A15F600001D4DE2 /* WorkoutsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108363F2A15F600001D4DE2 /* WorkoutsCardView.swift */; };
 		41A9195E2A06751B007495F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195D2A06751B007495F2 /* AppDelegate.swift */; };
 		41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195F2A06751B007495F2 /* SceneDelegate.swift */; };
 		41A919672A06751D007495F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A919662A06751D007495F2 /* Assets.xcassets */; };
@@ -55,6 +60,11 @@
 		4108362F2A152D5E001D4DE2 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		410836312A152DBD001D4DE2 /* SelectGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderViewController.swift; sourceTree = "<group>"; };
 		410836332A152EAC001D4DE2 /* SelectAgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAgeViewController.swift; sourceTree = "<group>"; };
+		410836362A15F11A001D4DE2 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		410836382A15F17D001D4DE2 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		4108363B2A15F401001D4DE2 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		4108363D2A15F475001D4DE2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4108363F2A15F600001D4DE2 /* WorkoutsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsCardView.swift; sourceTree = "<group>"; };
 		41A9195A2A06751B007495F2 /* iOS CW - COBSCCOMP212P-060.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS CW - COBSCCOMP212P-060.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A9195D2A06751B007495F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41A9195F2A06751B007495F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +97,7 @@
 				4108362B2A152C07001D4DE2 /* CustomTextView.swift */,
 				4108362D2A152CC1001D4DE2 /* GenderSelectionButton.swift */,
 				4108362F2A152D5E001D4DE2 /* WorkoutView.swift */,
+				4108363F2A15F600001D4DE2 /* WorkoutsCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -94,9 +105,9 @@
 		410836052A114C0B001D4DE2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4108363A2A15F3AA001D4DE2 /* BottomNavigationController */,
 				410836062A114C4E001D4DE2 /* OnBoardingViewController.swift */,
 				4108360D2A114DBB001D4DE2 /* ForgetPasswordController.swift */,
-				4108360F2A114DE6001D4DE2 /* HomeController.swift */,
 				410836112A114E0C001D4DE2 /* LoginController.swift */,
 				410836132A114E54001D4DE2 /* RegisterController.swift */,
 				410836312A152DBD001D4DE2 /* SelectGenderViewController.swift */,
@@ -121,8 +132,20 @@
 			isa = PBXGroup;
 			children = (
 				410836222A13F74C001D4DE2 /* User.swift */,
+				410836362A15F11A001D4DE2 /* Workout.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4108363A2A15F3AA001D4DE2 /* BottomNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				4108363B2A15F401001D4DE2 /* CustomTabBarController.swift */,
+				4108360F2A114DE6001D4DE2 /* HomeController.swift */,
+				410836382A15F17D001D4DE2 /* ScheduleViewController.swift */,
+				4108363D2A15F475001D4DE2 /* ProfileViewController.swift */,
+			);
+			path = BottomNavigationController;
 			sourceTree = "<group>";
 		};
 		41A919512A06751B007495F2 = {
@@ -237,13 +260,18 @@
 			files = (
 				410836142A114E54001D4DE2 /* RegisterController.swift in Sources */,
 				41A9195E2A06751B007495F2 /* AppDelegate.swift in Sources */,
+				410836372A15F11A001D4DE2 /* Workout.swift in Sources */,
 				410836042A114ABD001D4DE2 /* AuthHeaderView.swift in Sources */,
 				410836322A152DBD001D4DE2 /* SelectGenderViewController.swift in Sources */,
 				4108361C2A13F65A001D4DE2 /* AuthService.swift in Sources */,
+				4108363E2A15F475001D4DE2 /* ProfileViewController.swift in Sources */,
 				410836302A152D5E001D4DE2 /* WorkoutView.swift in Sources */,
 				410836202A13F6F6001D4DE2 /* Validator.swift in Sources */,
 				410836162A13E8D0001D4DE2 /* LoadingView.swift in Sources */,
+				410836392A15F17D001D4DE2 /* ScheduleViewController.swift in Sources */,
 				4108361E2A13F6AA001D4DE2 /* AlertManager.swift in Sources */,
+				4108363C2A15F401001D4DE2 /* CustomTabBarController.swift in Sources */,
+				410836402A15F600001D4DE2 /* WorkoutsCardView.swift in Sources */,
 				4108360B2A114D19001D4DE2 /* CustomTextField.swift in Sources */,
 				410836232A13F74C001D4DE2 /* User.swift in Sources */,
 				41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */,
