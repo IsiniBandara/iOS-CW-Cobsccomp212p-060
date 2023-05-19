@@ -78,25 +78,45 @@ func setupUI(){
         print("Selected option: \(selectedOption)")
     }
 
-//        func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//            let title = options[row]
-//            let attributes: [NSAttributedString.Key: Any] = [
-//                .foregroundColor: UIColor.white, // Customize the text color here
-//                .font: UIFont.systemFont(ofSize: 30, weight: .bold)
-//            ]
-//
-//            return NSAttributedString(string: title, attributes: attributes)
-//        }
-func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-    let label = UILabel()
-    label.textAlignment = .center
-    label.textColor = UIColor(named: "Green")
-    label.font = UIFont.systemFont(ofSize: 30) // Adjust the font size as desired
-    let selectedOption = options[row]
-    label.text = selectedOption// Provide the text for the row
-    
-    return label
-}
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+
+        
+        let rowView = UIView()
+         
+         // Add a label for the weight value
+            let label = UILabel()
+            label.textAlignment = .center
+            label.textColor = UIColor(named: "White")
+            label.font = UIFont.systemFont(ofSize: 30) // Adjust the font size as desired
+            let selectedOption = options[row]
+            label.text = selectedOption// Provide the text for the row
+         label.translatesAutoresizingMaskIntoConstraints = false
+         rowView.addSubview(label)
+         
+         // Add a divider view
+         let divider = UIView()
+         divider.backgroundColor = UIColor(named: "Green")
+         divider.translatesAutoresizingMaskIntoConstraints = false
+         rowView.addSubview(divider)
+         
+         // Set constraints for the label and divider
+         NSLayoutConstraint.activate([
+             label.leadingAnchor.constraint(equalTo: rowView.leadingAnchor),
+             label.trailingAnchor.constraint(equalTo: rowView.trailingAnchor),
+             label.topAnchor.constraint(equalTo: rowView.topAnchor),
+             label.bottomAnchor.constraint(equalTo: rowView.bottomAnchor),
+             
+//             divider.leadingAnchor.constraint(equalTo: rowView.leadingAnchor),
+//             divider.trailingAnchor.constraint(equalTo: rowView.trailingAnchor),
+             divider.centerXAnchor.constraint(equalTo: rowView.centerXAnchor),
+             divider.bottomAnchor.constraint(equalTo: rowView.bottomAnchor),
+             divider.heightAnchor.constraint(equalToConstant: 1),
+             divider.widthAnchor.constraint(equalTo: rowView.widthAnchor, multiplier: 0.3)
+         ])
+         
+         return rowView
+    }
+
     
 
 }
