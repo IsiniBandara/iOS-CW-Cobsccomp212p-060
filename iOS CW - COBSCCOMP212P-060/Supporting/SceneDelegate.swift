@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if Auth.auth().currentUser == nil {
             self.goToController(with:  OnboardingViewController())
         }else{
-            self.goToController(with: SelectWeightViewController())
+            self.goToController(with: SelectGoalViewController())
         }
     }
     
