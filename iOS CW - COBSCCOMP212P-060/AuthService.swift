@@ -94,9 +94,15 @@ class AuthService  {
             if let snapshot = snapshot,
                let snapshotData = snapshot.data(),
                let username = snapshotData["username"] as? String,
-                let email = snapshotData["email"] as? String
+                let email = snapshotData["email"] as? String,
+               let gender = snapshotData["gender"] as? String,
+                let age = snapshotData["age"] as? String,
+               let height = snapshotData["height"] as? String,
+               let weight = snapshotData["weight"] as? String,
+               let goal = snapshotData["goal"] as? String,
+               let activity_level = snapshotData["activity_level"] as? String
             {
-                let user = FetchUser(username: username, email: email, userUID: userUID)
+                let user = FetchUser(username: username, email: email, userUID: userUID, gender: gender, age: age, height: height, weight: weight, goal: goal, activity_level: activity_level)
                 completion(user, nil)
             }
         }

@@ -22,11 +22,21 @@ class BMICalculatorViewController: UIViewController {
     }
 
     private func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "Black")
+    
 
-        weightTextField.placeholder = "Weight (kg)"
+//        weightTextField.placeholder = "Weight (kg)"
+        let placeholderText = "Weight (kg)"
+
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor(named: "White")!, // Replace "Green" with your desired color
+            .font: UIFont.systemFont(ofSize: 14) // Adjust the font size as needed
+        ]
+
+        weightTextField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: attributes)
         weightTextField.borderStyle = .roundedRect
         weightTextField.keyboardType = .decimalPad
+        weightTextField.backgroundColor = UIColor(named: "LightBlack")
 
         heightTextField.placeholder = "Height (cm)"
         heightTextField.borderStyle = .roundedRect
