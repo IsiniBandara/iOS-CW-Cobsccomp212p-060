@@ -38,6 +38,7 @@
 		410836462A16869E001D4DE2 /* SelectWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836452A16869E001D4DE2 /* SelectWeightViewController.swift */; };
 		410836482A168AEB001D4DE2 /* BMICalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836472A168AEB001D4DE2 /* BMICalculatorViewController.swift */; };
 		4108364C2A1781FE001D4DE2 /* SelectGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108364B2A1781FE001D4DE2 /* SelectGoalViewController.swift */; };
+		4108364E2A17836C001D4DE2 /* SelectActivityLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108364D2A17836C001D4DE2 /* SelectActivityLevelViewController.swift */; };
 		41A9195E2A06751B007495F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195D2A06751B007495F2 /* AppDelegate.swift */; };
 		41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195F2A06751B007495F2 /* SceneDelegate.swift */; };
 		41A919672A06751D007495F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A919662A06751D007495F2 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		410836452A16869E001D4DE2 /* SelectWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWeightViewController.swift; sourceTree = "<group>"; };
 		410836472A168AEB001D4DE2 /* BMICalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMICalculatorViewController.swift; sourceTree = "<group>"; };
 		4108364B2A1781FE001D4DE2 /* SelectGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGoalViewController.swift; sourceTree = "<group>"; };
+		4108364D2A17836C001D4DE2 /* SelectActivityLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActivityLevelViewController.swift; sourceTree = "<group>"; };
 		41A9195A2A06751B007495F2 /* iOS CW - COBSCCOMP212P-060.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS CW - COBSCCOMP212P-060.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A9195D2A06751B007495F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41A9195F2A06751B007495F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				410836432A16867D001D4DE2 /* SelectHeightViewController.swift */,
 				410836452A16869E001D4DE2 /* SelectWeightViewController.swift */,
 				4108364B2A1781FE001D4DE2 /* SelectGoalViewController.swift */,
+				4108364D2A17836C001D4DE2 /* SelectActivityLevelViewController.swift */,
 				410836472A168AEB001D4DE2 /* BMICalculatorViewController.swift */,
 			);
 			path = Controller;
@@ -292,6 +295,7 @@
 				410836232A13F74C001D4DE2 /* User.swift in Sources */,
 				41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */,
 				410836342A152EAC001D4DE2 /* SelectAgeViewController.swift in Sources */,
+				4108364E2A17836C001D4DE2 /* SelectActivityLevelViewController.swift in Sources */,
 				4108362C2A152C07001D4DE2 /* CustomTextView.swift in Sources */,
 				410836122A114E0C001D4DE2 /* LoginController.swift in Sources */,
 				410836102A114DE6001D4DE2 /* HomeController.swift in Sources */,
