@@ -12,15 +12,17 @@ class HomeController: UIViewController , UIScrollViewDelegate {
     var lastContentOffsetY: CGFloat = 0
     var timer: Timer?
     
-    private let headingTextView = CustomTextView(title: "Hello Isini", fontSize: .big)
+    private let headingTextView = CustomTextView(title: "Hello Loading...", fontSize: .big)
     private let subheadingTextView = CustomTextView(title: "Loading...", fontSize: .small)
     private let workoutTextView = CustomTextView(title: "Workout Plan", fontSize: .med)
+    
+    private var wokroutMainList = [WorkoutMainList]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
-        addWorkoutCardViews()
         startTimer()
+        
         AuthService.shared.fetchUser { [weak self] user, error in
             guard let self = self else { return }
             if let error = error {
@@ -32,6 +34,20 @@ class HomeController: UIViewController , UIScrollViewDelegate {
                 self.headingTextView.text = "Hello \(user.username)"
             }
             
+        }
+        
+        AuthService.shared.fetchMainWorkouts { [weak self] list, error in
+            guard let self = self else { return }
+            if let error = error {
+                AlertManager.showFetchingWorkoutsError(on: self, with: error)
+                return
+            }
+            
+            if let list = list{
+                self.wokroutMainList = list
+                self.addWorkoutCardViews(for: list)
+                print(list)
+            }
         }
                 
     }
@@ -80,18 +96,22 @@ class HomeController: UIViewController , UIScrollViewDelegate {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    private func addWorkoutCardViews() {
+    private func addWorkoutCardViews(for workoutsData: [WorkoutMainList]) {
         // Create and add workout card views to the scroll view
         // Adjust the values and layout as per your requirements
         
         let cardHeight: CGFloat = 210
         let cardSpacing: CGFloat = 16
-        let numberOfCards = workouts.count
+        let numberOfCards = workoutsData.count
         
         var previousCardView: WorkoutsCardView?
         
         for i in 0..<numberOfCards {
-            let cardView = WorkoutsCardView(workout: workouts[i])
+            let cardView = WorkoutsCardView(for: workoutsData[i])
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewItemTapped(_:)))
+            cardView.addGestureRecognizer(tapGesture)
+            cardView.tag = workoutsData[i].ID
+            
             cardView.translatesAutoresizingMaskIntoConstraints = false
             scrollView.addSubview(cardView)
             
@@ -114,8 +134,10 @@ class HomeController: UIViewController , UIScrollViewDelegate {
                     cardView.topAnchor.constraint(equalTo: scrollView.topAnchor)
                 ])
             }
+        
             
             previousCardView = cardView
+            
         }
         
         // Set the last card view's bottom constraint to the scroll view's bottom anchor
@@ -124,6 +146,8 @@ class HomeController: UIViewController , UIScrollViewDelegate {
                 lastCardView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -cardSpacing)
             ])
         }
+        
+
     }
     
     func startTimer() {
@@ -145,6 +169,20 @@ class HomeController: UIViewController , UIScrollViewDelegate {
 
         // Update the UI with the greeting
         subheadingTextView.text = greeting
+    }
+    
+    @objc func viewItemTapped(_ gestureRecognizer: UITapGestureRecognizer) {
+        guard let selectedView = gestureRecognizer.view,
+              let selectedItem = wokroutMainList.first(where: { $0.ID == selectedView.tag }) else {
+            return
+        }
+        
+        // Perform navigation to the detail page with modal values
+        let vc = WorkoutDetailViewController()
+        vc.selectedItemTitle = selectedItem.title // Set your modal values
+        
+        // Present the detail view controller
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

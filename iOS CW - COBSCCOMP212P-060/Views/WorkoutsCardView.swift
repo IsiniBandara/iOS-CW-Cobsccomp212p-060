@@ -32,7 +32,7 @@ class WorkoutsCardView: UIView  {
         return label
     }()
     
-    init(workout: Workout) {
+    init(for workout: WorkoutMainList) {
         super.init(frame: .zero)
         setupView()
         configure(with: workout)
@@ -71,10 +71,43 @@ class WorkoutsCardView: UIView  {
         descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
     }
     
-    private func configure(with workout: Workout) {
-        imageView.image = workout.image
+    private func configure(with workout: WorkoutMainList) {
+        if let imageUrl = URL(string: workout.url) {
+            // Create a URLSession data task to fetch the image data from the URL
+            URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+                // Check for any errors
+                if let error = error {
+                    print("Error downloading image: \(error)")
+                    return
+                }
+                
+                // Check if the response is valid and the data exists
+                if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
+                    print("Invalid response: \(httpResponse.statusCode)")
+                    return
+                }
+                
+                if let imageData = data {
+                    // Create a UIImage from the downloaded image data
+                    if let image = UIImage(data: imageData) {
+                        // Update the UIImageView on the main thread
+                        DispatchQueue.main.async {
+                            self.imageView.image = image
+                        }
+                    } else {
+                        print("Failed to create UIImage from image data")
+                    }
+                } else {
+                    print("No image data received")
+                }
+            }.resume() // Start the data task
+        } else {
+            print("Invalid image URL")
+        }
+//        imageView.image = workout.image
         titleLabel.text = workout.title
-        descriptionLabel.text = workout.description
+        descriptionLabel.text =  "| ⏱\(workout.duration) -  ♨️\(workout.burn_cal)"
     }
 }
+
 
