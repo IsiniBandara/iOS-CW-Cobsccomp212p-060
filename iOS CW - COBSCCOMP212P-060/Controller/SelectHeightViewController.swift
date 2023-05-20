@@ -9,7 +9,7 @@ import UIKit
 
 class SelectHeightViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     private var pickerView: UIPickerView!
-    private let nextButton = CustomButton(title: "Next", hasBackground: true, fontSize: .big)
+    private let nextButton = CustomButton(title: "Next ▶", hasBackground: true, fontSize: .big)
     private let headingTextView = CustomTextView(title: "What’s your height?", fontSize: .big)
     private let subheadingTextView = CustomTextView(title: "This helps us create your personalized plan", fontSize: .small)
     private var options: [String] = ["148 cm", "149 cm", "150 cm","151 cm", "152 cm", "153 cm","154 cm", "155 cm", "156 cm","157 cm", "158 cm", "159 cm","160 cm", "161 cm", "162 cm","163 cm", "164 cm", "165 cm","166 cm", "167 cm", "168 cm", "169 cm", "170 cm", "171 cm", "172 cm", "173 cm", "174 cm","175 cm", "176 cm", "177 cm", "178 cm", "179 cm", "180 cm"]

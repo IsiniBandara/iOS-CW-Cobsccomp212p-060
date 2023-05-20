@@ -9,7 +9,7 @@ import UIKit
 
 class SelectWeightViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     private var pickerView: UIPickerView!
-    private let nextButton = CustomButton(title: "Next", hasBackground: true, fontSize: .big)
+    private let nextButton = CustomButton(title: "Next ▶", hasBackground: true, fontSize: .big)
     private let headingTextView = CustomTextView(title: "What’s your weight?", fontSize: .big)
     private let subheadingTextView = CustomTextView(title: "You can always change this later", fontSize: .small)
 

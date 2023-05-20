@@ -9,7 +9,7 @@ import UIKit
 
 class SelectAgeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     private var pickerView: UIPickerView!
-    private let nextButton = CustomButton(title: "Next", hasBackground: true, fontSize: .big)
+    private let nextButton = CustomButton(title: "Next ▶", hasBackground: true, fontSize: .big)
     private let headingTextView = CustomTextView(title: "How old are you ?", fontSize: .big)
     private let subheadingTextView = CustomTextView(title: "This helps us create your personalized plan", fontSize: .small)
     private var options: [String] = ["18", "19", "20","21", "22", "23","24", "25", "26","27", "28", "29","30", "31", "32","33", "34", "35","36", "37", "38", "39", "40", "41", "42", "43", "44","45", "46", "47", "48", "49", "50"]

@@ -9,7 +9,7 @@ import UIKit
 
 class SelectGoalViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     private var pickerView: UIPickerView!
-    private let nextButton = CustomButton(title: "Next", hasBackground: true, fontSize: .big)
+    private let nextButton = CustomButton(title: "Next ▶", hasBackground: true, fontSize: .big)
     private let headingTextView = CustomTextView(title: "What’s your goal?", fontSize: .big)
     private let subheadingTextView = CustomTextView(title: "This helps us create your personalized plan", fontSize: .small)
     private var options: [String] = ["Gain Weight", "Lose weight", "Get fitter","Gain more flexible", "Learn the basic"]
