@@ -107,4 +107,47 @@ class AuthService  {
             }
         }
     }
+    
+    public func fetchMainWorkouts(completion: @escaping ([WorkoutMainList]?, Error?) -> Void){
+            // Create a Firestore reference to the Firestore database
+            var workout = [WorkoutMainList]()
+            let db = Firestore.firestore()
+
+            // Create a reference to the "cool_down" collection under "/Female/Gryffindor Strength"
+            let Ref = db.collection("Workouts")
+
+            // Fetch the data from the Firestore collection
+            Ref.getDocuments { (snapshot, error) in
+                if let error = error {
+                    print("Error fetching documents: \(error)")
+                    completion(nil, error)
+                    return
+                }
+
+                guard let snapshot = snapshot else {
+                    print("Snapshot is nil")
+                    completion(nil, error)
+                    return
+                }
+
+                for document in snapshot.documents {
+                    let data = document.data()
+                    // Process the retrieved data here
+                    // Access specific fields using the data dictionary
+                    let id = data["id"] as? Int
+                    let title = data["title"] as? String
+                    let duration = data["duration"] as? String
+                    let burn_cal = data["burn_cal"] as? String
+                    let covered_area = data["covered_area"] as? String
+                    let interval = data["interval"] as? String
+                    let url = data["url"] as? String
+                    
+                    // Do further processing or store the retrieved data as needed
+                    workout.append(WorkoutMainList(ID: id!, burn_cal: burn_cal ?? "100 cal", covered_area: covered_area ?? "", duration: duration ?? "", interval: interval ?? "", title: title ?? "", url: url ?? ""))
+                    
+                }
+                
+                completion(workout, nil)
+            }
+        }
 }

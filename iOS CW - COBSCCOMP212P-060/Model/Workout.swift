@@ -23,3 +23,13 @@ let workouts: [Workout] = [
     Workout(title: "Workout 6", description: "Description 6", image: UIImage(named: "workout6")!),
     Workout(title: "Workout 7", description: "Description 7", image: UIImage(named: "workout7")!)
 ]
+
+struct WorkoutMainList {
+    let ID: Int
+    let burn_cal: String
+    let covered_area: String
+    let duration: String
+    let interval: String
+    let title: String
+    let url: String
+}
