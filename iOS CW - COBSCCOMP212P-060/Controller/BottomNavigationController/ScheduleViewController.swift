@@ -28,6 +28,19 @@ class ScheduleViewController: UIViewController {
         navigationItem.title = "Create Schedule"
         // Set the navigation bar title text color
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "White") as Any]
+        
+        AuthService.shared.fetchSchedule { [weak self] list, error in
+            guard let self = self else { return }
+            if let error = error {
+                AlertManager.showFetchingScheduleError(on: self, with: error)
+                return
+            }
+            
+            if let list = list{
+                self.workoutSessions = list
+                self.tableView.reloadData()
+            }
+        }
 
     }
     
@@ -57,6 +70,7 @@ class ScheduleViewController: UIViewController {
                 if Validator.isTimeValid(for: sessionTime){
                     val2 = sessionTime
                     self?.workoutSessions.append(val2+" - "+val1)
+                    self?.createSchedule(for: "\(val2) - \(val1)")
                     self?.tableView.reloadData()
                 }
                 
@@ -67,6 +81,17 @@ class ScheduleViewController: UIViewController {
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func createSchedule(for data: String){
+        AuthService.shared.createSchedule(with: data) { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                AlertManager.showCreatingScheduleError(on: self, with: error)
+                return
+            }
+            AlertManager.showCreateScheduleSuccessAlert(on: self)
+        }
     }
 }
 

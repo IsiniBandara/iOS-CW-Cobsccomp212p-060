@@ -150,4 +150,57 @@ class AuthService  {
                 completion(workout, nil)
             }
         }
+    
+    
+    public func createSchedule(with data: String, completion: @escaping (Error?) -> Void){
+        guard let userUID = Auth.auth().currentUser?.uid else { return }
+        let db = Firestore.firestore()
+        
+        let userRef = db.collection("users").document(userUID).collection("schedule").document()
+        
+        let scheduleData: [String: Any] = [
+            "data": data
+        ]
+
+        // Add the user data to Firestore
+        userRef.setData(scheduleData) { error in
+            if let error = error {
+                completion(error)
+                print("Error adding document: \(error)")
+            } else {
+                print("Document added successfully")
+                completion(nil)
+            }
+        }
+    }
+    
+    
+    public func fetchSchedule(completion: @escaping ([String]?,Error?) -> Void){
+        guard let userUID = Auth.auth().currentUser?.uid else { return }
+        var schedule = [String]()
+        let db = Firestore.firestore()
+        let Ref = db.collection("users").document(userUID).collection("schedule")
+
+        Ref.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error fetching documents: \(error)")
+                completion(nil, error)
+                return
+            }
+
+            guard let snapshot = snapshot else {
+                print("Snapshot is nil")
+                completion(nil, error)
+                return
+            }
+
+            for document in snapshot.documents {
+                let data = document.data()
+                let valdata = data["data"] as? String
+                schedule.append(valdata!)
+            }
+            
+            completion(schedule, nil)
+        }
+    }
 }
