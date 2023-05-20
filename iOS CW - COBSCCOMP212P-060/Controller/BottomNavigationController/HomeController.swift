@@ -179,7 +179,7 @@ class HomeController: UIViewController , UIScrollViewDelegate {
         
         // Perform navigation to the detail page with modal values
         let vc = WorkoutDetailViewController()
-        vc.selectedItemTitle = selectedItem.title // Set your modal values
+        vc.selectedItemTitle = selectedItem // Set your modal values
         
         // Present the detail view controller
         self.navigationController?.pushViewController(vc, animated: true)

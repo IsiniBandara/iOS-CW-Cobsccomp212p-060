@@ -42,6 +42,8 @@
 		410836502A17DD93001D4DE2 /* ProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108364F2A17DD93001D4DE2 /* ProfileUIView.swift */; };
 		410836522A18A174001D4DE2 /* WorkoutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836512A18A174001D4DE2 /* WorkoutDetailViewController.swift */; };
 		410836542A18B06F001D4DE2 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836532A18B06F001D4DE2 /* Schedule.swift */; };
+		410836562A18D857001D4DE2 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836552A18D857001D4DE2 /* DetailHeaderView.swift */; };
+		410836582A18D8AD001D4DE2 /* SubWorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836572A18D8AD001D4DE2 /* SubWorkoutCardView.swift */; };
 		41A9195E2A06751B007495F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195D2A06751B007495F2 /* AppDelegate.swift */; };
 		41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195F2A06751B007495F2 /* SceneDelegate.swift */; };
 		41A919672A06751D007495F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A919662A06751D007495F2 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		4108364F2A17DD93001D4DE2 /* ProfileUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIView.swift; sourceTree = "<group>"; };
 		410836512A18A174001D4DE2 /* WorkoutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailViewController.swift; sourceTree = "<group>"; };
 		410836532A18B06F001D4DE2 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		410836552A18D857001D4DE2 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
+		410836572A18D8AD001D4DE2 /* SubWorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubWorkoutCardView.swift; sourceTree = "<group>"; };
 		41A9195A2A06751B007495F2 /* iOS CW - COBSCCOMP212P-060.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS CW - COBSCCOMP212P-060.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A9195D2A06751B007495F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41A9195F2A06751B007495F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				4108362F2A152D5E001D4DE2 /* WorkoutView.swift */,
 				4108363F2A15F600001D4DE2 /* WorkoutsCardView.swift */,
 				4108364F2A17DD93001D4DE2 /* ProfileUIView.swift */,
+				410836552A18D857001D4DE2 /* DetailHeaderView.swift */,
+				410836572A18D8AD001D4DE2 /* SubWorkoutCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 				410836142A114E54001D4DE2 /* RegisterController.swift in Sources */,
 				41A9195E2A06751B007495F2 /* AppDelegate.swift in Sources */,
 				410836372A15F11A001D4DE2 /* Workout.swift in Sources */,
+				410836582A18D8AD001D4DE2 /* SubWorkoutCardView.swift in Sources */,
 				410836042A114ABD001D4DE2 /* AuthHeaderView.swift in Sources */,
 				410836322A152DBD001D4DE2 /* SelectGenderViewController.swift in Sources */,
 				4108361C2A13F65A001D4DE2 /* AuthService.swift in Sources */,
@@ -304,6 +311,7 @@
 				410836502A17DD93001D4DE2 /* ProfileUIView.swift in Sources */,
 				410836232A13F74C001D4DE2 /* User.swift in Sources */,
 				41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */,
+				410836562A18D857001D4DE2 /* DetailHeaderView.swift in Sources */,
 				410836342A152EAC001D4DE2 /* SelectAgeViewController.swift in Sources */,
 				4108364E2A17836C001D4DE2 /* SelectActivityLevelViewController.swift in Sources */,
 				410836542A18B06F001D4DE2 /* Schedule.swift in Sources */,
