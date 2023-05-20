@@ -203,4 +203,136 @@ class AuthService  {
             completion(schedule, nil)
         }
     }
+    
+    public func fetchWorkouts(for title: String, completion: @escaping ([WorkoutList]?,[WorkoutList]?, [WorkoutList]?, Error?) -> Void){
+        // Create a Firestore reference to the Firestore database
+        var warmup = [WorkoutList]()
+        var workout = [WorkoutList]()
+        var cooldown = [WorkoutList]()
+        let db = Firestore.firestore()
+
+        // Create a reference to the "cool_down" collection under "/Female/Gryffindor Strength"
+        let warmUpRef = db.collection("Female").document(title).collection("warm_up")
+        let workoutRef = db.collection("Female").document(title).collection("workout")
+        let coolDownRef = db.collection("Female").document(title).collection("cool_down")
+        
+
+        // Fetch the data from the Firestore collection
+        warmUpRef.getDocuments { (snapshot, error) in
+            if let error = error {
+                print("Error fetching documents: \(error)")
+                completion(nil,nil, nil, error)
+                return
+            }
+
+            guard let snapshot = snapshot else {
+                print("Snapshot is nil")
+                completion(nil,nil, nil, error)
+                return
+            }
+
+            for document in snapshot.documents {
+                let data = document.data()
+                // Process the retrieved data here
+                // Access specific fields using the data dictionary
+                let id = document.documentID
+                let title = data["title"] as? String
+                let duration = data["duration"] as? String
+                let instruction = data["instruction"] as? String
+                let muscel = data["muscel"] as? String
+                let body_part = data["body_part"] as? String
+                let video_url = data["video_url"] as? String
+                
+                // Do further processing or store the retrieved data as needed
+                warmup.append(WorkoutList(ID: id,
+                                           body_part: body_part!,
+                                           duration: Int(duration!) ?? 0,
+                                           instruction: instruction!,
+                                           muscel: muscel!,
+                                           title: title!,
+                                           video_url: video_url!))
+                
+            }
+            workoutRef.getDocuments { (snapshot, error) in
+                       if let error = error {
+                           print("Error fetching documents: \(error)")
+                           completion(nil,nil, nil, error)
+                           return
+                       }
+
+                       guard let snapshot = snapshot else {
+                           print("Snapshot is nil")
+                           completion(nil,nil, nil, error)
+                           return
+                       }
+
+                       for document in snapshot.documents {
+                           let data = document.data()
+                           // Process the retrieved data here
+                           // Access specific fields using the data dictionary
+                           let id = document.documentID
+                           let title = data["title"] as? String
+                           let duration = data["duration"] as? String
+                           let instruction = data["instruction"] as? String
+                           let muscel = data["muscel"] as? String
+                           let body_part = data["body_part"] as? String
+                           let video_url = data["video_url"] as? String
+                           
+                           // Do further processing or store the retrieved data as needed
+                           workout.append(WorkoutList(ID: id,
+                                                      body_part: body_part!,
+                                                      duration: Int(duration!) ?? 0,
+                                                      instruction: instruction!,
+                                                      muscel: muscel!,
+                                                      title: title!,
+                                                      video_url: video_url!))
+                           
+                       }
+                coolDownRef.getDocuments { (snapshot, error) in
+                                        if let error = error {
+                                            print("Error fetching documents: \(error)")
+                                            completion(nil,nil, nil, error)
+                                            return
+                                        }
+
+                                        guard let snapshot = snapshot else {
+                                            print("Snapshot is nil")
+                                            completion(nil,nil, nil, error)
+                                            return
+                                        }
+
+                                        for document in snapshot.documents {
+                                            let data = document.data()
+                                            // Process the retrieved data here
+                                            // Access specific fields using the data dictionary
+                                            let id = document.documentID
+                                            let title = data["title"] as? String
+                                            let duration = data["duration"] as? String
+                                            let instruction = data["instruction"] as? String
+                                            let muscel = data["muscel"] as? String
+                                            let body_part = data["body_part"] as? String
+                                            let video_url = data["video_url"] as? String
+                                            
+                                            // Do further processing or store the retrieved data as needed
+                                            cooldown.append(WorkoutList(ID: id,
+                                                                       body_part: body_part!,
+                                                                       duration: Int(duration!) ?? 0,
+                                                                       instruction: instruction!,
+                                                                       muscel: muscel!,
+                                                                       title: title!,
+                                                                       video_url: video_url!))
+                                            
+                                        }
+                            //            completion(nil, nil, cooldown, nil)
+                                completion(warmup, workout, cooldown, nil)
+                                    }
+                   }
+        }
+
+       
+
+
+        
+        
+    }
 }

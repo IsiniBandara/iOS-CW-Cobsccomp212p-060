@@ -33,3 +33,13 @@ struct WorkoutMainList {
     let title: String
     let url: String
 }
+
+struct WorkoutList {
+    let ID: String
+    let body_part: String
+    let duration: Int
+    let instruction: String
+    let muscel: String
+    let title: String
+    let video_url: String
+}
