@@ -148,13 +148,12 @@ class RegisterController: UIViewController {
                 }
                 
                 if wasRegistered{
-                    if let sceneDeletgate = self.view.window?.windowScene?.delegate as? SceneDelegate {
-                        sceneDeletgate.checkAuthentication()
-                    }
-                }else {
-                    AlertManager.showRegistrationErrorAlert(on: self)
-                    self.loadingView.isHidden = true
-                }
+                     let vc = SelectGenderViewController()
+                     self.navigationController?.pushViewController(vc, animated: true)
+                 }else {
+                     AlertManager.showRegistrationErrorAlert(on: self)
+                     self.loadingView.isHidden = true
+                 }
             }
         }
     }

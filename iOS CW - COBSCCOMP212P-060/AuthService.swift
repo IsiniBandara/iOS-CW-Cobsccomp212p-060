@@ -108,6 +108,25 @@ class AuthService  {
         }
     }
     
+    public func updateUser(valTitle: String,value: String ,completion: @escaping ( Bool, Error?) -> Void){
+        guard let userUID = Auth.auth().currentUser?.uid else { return }
+        
+        let db = Firestore.firestore()
+        let collectionRef = db.collection("users")
+        let documentRef = collectionRef.document(userUID)
+        let updatedData: [String: Any] = [
+            valTitle: value
+        ]
+        documentRef.updateData(updatedData) { error in
+            if let error = error {
+                completion(false, error)
+            } else {
+                completion(true, nil)
+            }
+        }
+        
+    }
+    
     public func fetchMainWorkouts(completion: @escaping ([WorkoutMainList]?, Error?) -> Void){
             // Create a Firestore reference to the Firestore database
             var workout = [WorkoutMainList]()
