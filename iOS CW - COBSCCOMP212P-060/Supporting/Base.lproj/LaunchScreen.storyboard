@@ -15,14 +15,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="NNm-3J-yLi">
-                                <rect key="frame" x="132.66666666666666" y="362" width="127.99999999999997" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="NNm-3J-yLi">
+                                <rect key="frame" x="161" y="396" width="70" height="61"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.10980392156862745" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="NNm-3J-yLi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lpp-IC-ASU"/>
+                            <constraint firstItem="NNm-3J-yLi" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" priority="250" id="lpp-IC-ASU"/>
                             <constraint firstItem="NNm-3J-yLi" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="lzd-4k-XGX"/>
                         </constraints>
                     </view>
@@ -33,6 +34,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="128" height="128"/>
+        <image name="logo" width="117" height="116"/>
     </resources>
 </document>

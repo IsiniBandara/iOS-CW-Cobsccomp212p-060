@@ -44,6 +44,7 @@
 		410836542A18B06F001D4DE2 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836532A18B06F001D4DE2 /* Schedule.swift */; };
 		410836562A18D857001D4DE2 /* DetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836552A18D857001D4DE2 /* DetailHeaderView.swift */; };
 		410836582A18D8AD001D4DE2 /* SubWorkoutCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 410836572A18D8AD001D4DE2 /* SubWorkoutCardView.swift */; };
+		4108365E2A19D214001D4DE2 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4108365D2A19D214001D4DE2 /* VideoDetailViewController.swift */; };
 		41A9195E2A06751B007495F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195D2A06751B007495F2 /* AppDelegate.swift */; };
 		41A919602A06751B007495F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A9195F2A06751B007495F2 /* SceneDelegate.swift */; };
 		41A919672A06751D007495F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41A919662A06751D007495F2 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		410836532A18B06F001D4DE2 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		410836552A18D857001D4DE2 /* DetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHeaderView.swift; sourceTree = "<group>"; };
 		410836572A18D8AD001D4DE2 /* SubWorkoutCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubWorkoutCardView.swift; sourceTree = "<group>"; };
+		4108365D2A19D214001D4DE2 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		41A9195A2A06751B007495F2 /* iOS CW - COBSCCOMP212P-060.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS CW - COBSCCOMP212P-060.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		41A9195D2A06751B007495F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41A9195F2A06751B007495F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				4108364D2A17836C001D4DE2 /* SelectActivityLevelViewController.swift */,
 				410836472A168AEB001D4DE2 /* BMICalculatorViewController.swift */,
 				410836512A18A174001D4DE2 /* WorkoutDetailViewController.swift */,
+				4108365D2A19D214001D4DE2 /* VideoDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				410836402A15F600001D4DE2 /* WorkoutsCardView.swift in Sources */,
 				410836482A168AEB001D4DE2 /* BMICalculatorViewController.swift in Sources */,
 				410836442A16867E001D4DE2 /* SelectHeightViewController.swift in Sources */,
+				4108365E2A19D214001D4DE2 /* VideoDetailViewController.swift in Sources */,
 				4108360B2A114D19001D4DE2 /* CustomTextField.swift in Sources */,
 				410836502A17DD93001D4DE2 /* ProfileUIView.swift in Sources */,
 				410836232A13F74C001D4DE2 /* User.swift in Sources */,
