@@ -468,6 +468,7 @@
 				DEVELOPMENT_TEAM = 42VB8BLHG5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS CW - COBSCCOMP212P-060/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = GymGenie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -496,6 +497,7 @@
 				DEVELOPMENT_TEAM = 42VB8BLHG5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS CW - COBSCCOMP212P-060/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = GymGenie;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

@@ -18,7 +18,7 @@ class VideoDetailViewController: UIViewController, UIScrollViewDelegate {
     private let startButton = CustomButton(title: "Start Workout", hasBackground: true, fontSize: .big)
     
     private let durationTextView = CustomTextView(title: "⏱ Duration: ", fontSize: .med)
-    private let bodyPartMainTextView = CustomTextView(title: "🏋 Bodt Parts", fontSize: .med)
+    private let bodyPartMainTextView = CustomTextView(title: "🏋 Body Parts", fontSize: .med)
     private let boadyPartTextView = CustomTextView(title: "Loading...", fontSize: .small)
     private let instructionMainTextView = CustomTextView(title: "📋 Instructions", fontSize: .med)
     private let instructionTextView = CustomTextView(title: "Loading...", fontSize: .small)

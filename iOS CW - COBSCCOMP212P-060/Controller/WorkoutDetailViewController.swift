@@ -12,7 +12,7 @@ class WorkoutDetailViewController: UIViewController, UIScrollViewDelegate {
     let mainScrollView = UIScrollView()
     
     private let back = CustomButton(title: "◀ Back", hasBackground: false, fontSize: .small)
-    private let subheadingWarmUpView = CustomTextView(title: "Wamp Up", fontSize: .med)
+    private let subheadingWarmUpView = CustomTextView(title: "Warm Up", fontSize: .med)
     private let subheadingWarkoutView = CustomTextView(title: "Workout", fontSize: .med)
     private let subheadingCoolDownView = CustomTextView(title: "Cool Down", fontSize: .med)
     
