@@ -22,6 +22,7 @@ This is a fitness app developed for iOS using Swift and UIKit. The app allows us
 
 - Swift
 - UIKit
+- PassKit
 
 Here are some screenshots
 
